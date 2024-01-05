@@ -10,6 +10,7 @@ public class SingleDimensionArray {
     }
 
 
+    // insert element into array
     public void insert(int location, int valueToBeInserted) {
         try{
             if (arr[location] == Integer.MIN_VALUE) {
@@ -20,6 +21,40 @@ public class SingleDimensionArray {
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Invalid index to acces array");
+        }
+    }
+
+    // Array traversal
+
+    public void traverseArray() {
+        try {
+            for(int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        } catch (Exception e) {
+            System.out.println("Array no longer existis");
+        }
+
+    }
+
+    // Search for an element in the given Array
+    public void searchInArray(int valueToSearch) {
+        for (int i=0; i< arr.length; i++) {
+            if (arr[i] == valueToSearch) {
+                System.out.println("Value is at the index of " + i);
+                return;
+            }
+        }
+        System.out.println(valueToSearch + " is not found ");
+    }
+
+    // Delete value from array
+    public void deleteValue(int valueToDeleteIndex) {
+        try {
+            arr[valueToDeleteIndex] = Integer.MIN_VALUE;
+            System.out.println("The value has been deleted succesfully");
+        } catch(ArrayIndexOutOfBoundsException e ) {
+            System.out.println("The value that is provided is not in the range of array");
         }
     }
 
